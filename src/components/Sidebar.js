@@ -14,7 +14,7 @@ class Sidebar extends Component {
             {this.props.loading
               ? <Heading level={5}>Loading...</Heading>
               : this.props.categories.map(({name, path}) => (
-                  <RoutedAnchor path={`/posts/${path}`} key={name}>{name}</RoutedAnchor>
+                  <RoutedAnchor path={`/${path}`} key={name}>{name}</RoutedAnchor>
               ))
             }
           </Box>

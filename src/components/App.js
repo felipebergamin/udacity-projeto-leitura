@@ -19,10 +19,10 @@ class App extends Component {
       <Router>
         <Fragment>
           <Route path='/' exact component={Home} />
-          <Route path='/posts/:category' exact component={Home} />
-          <Route path='/newpost' exact component={NewPost} />
+          <Route path='/post/new' exact component={NewPost} />
           <Route path='/post/edit/:postid' exact component={EditPost} />
-          <Route path='/post/:postid' exact component={PostView} />
+          <Route path='/:category' exact component={Home} />
+          <Route path='/:category/:postid' exact component={PostView} />
         </Fragment>
       </Router>
     )

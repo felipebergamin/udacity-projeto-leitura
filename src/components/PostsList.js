@@ -57,8 +57,8 @@ class PostsList extends Component {
 
           &nbsp;
 
-          <Link to='/newpost'>
-            <Button path='/newpost' label='Novo Post' icon={<TiPen />} fill />
+          <Link to='/post/new'>
+            <Button label='Novo Post' icon={<TiPen />} fill />
           </Link>
         </Box>
 

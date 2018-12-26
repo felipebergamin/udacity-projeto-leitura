@@ -40,7 +40,7 @@ class PostListItem extends Component {
 
           <TiThumbsDown onClick={() => this.handleDownvote(post.id)} />
 
-          <RoutedAnchor path={`/post/${post.id}`}>
+          <RoutedAnchor path={`/${post.category}/${post.id}`}>
             Ler
           </RoutedAnchor>
         </Box>
