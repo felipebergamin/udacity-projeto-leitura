@@ -3,10 +3,14 @@ import {
   RECEIVE_COMMENTS,
   REMOVE_COMMENT,
   UPDATE_COMMENT,
+  UPVOTE_COMMENT,
+  DOWNVOTE_COMMENT,
   addComment,
   receiveComments,
   removeComment,
   updateComment,
+  upvoteComment,
+  downvoteComment,
 } from './comments';
 
 describe('comments action creators', () => {
@@ -52,5 +56,25 @@ describe('comments action creators', () => {
     }
 
     expect(updateComment(comment)).toEqual(expectedAction)
+  })
+
+  it('should return an action to upvote a comment', () => {
+    const id = 1;
+    const expectedAction = {
+      type: UPVOTE_COMMENT,
+      id,
+    };
+
+    expect(upvoteComment(id)).toEqual(expectedAction);
+  })
+
+  it('should return an action to downvote a comment', () => {
+    const id = 1;
+    const expectedAction = {
+      type: DOWNVOTE_COMMENT,
+      id,
+    };
+
+    expect(downvoteComment(id)).toEqual(expectedAction);
   })
 })
