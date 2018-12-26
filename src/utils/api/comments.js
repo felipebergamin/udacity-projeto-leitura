@@ -11,11 +11,11 @@ const _voteComment = (option, commentId, baseurl, headers) => fetch(`${baseurl}/
 
 /* default export */
 export default (baseUrl, headers) => ({
-  addComment: (body, author, post) => fetch(`${baseUrl}/comments`, {
+  addComment: (body, author, parentId) => fetch(`${baseUrl}/comments`, {
     body: JSON.stringify({
       author,
       body,
-      post,
+      parentId,
       timestamp: Date.now(),
       id: uuid(),
     }),
@@ -43,8 +43,8 @@ export default (baseUrl, headers) => ({
     method: 'PUT',
   }).then(res => res.json()),
 
-  deleteComment: id => fetch(`${baseUrl}/${id}`, {
+  deleteComment: id => fetch(`${baseUrl}/comments/${id}`, {
     headers: new Headers(headers),
     method: 'DELETE',
-  }).then(res => res.json()),
+  }),
 });

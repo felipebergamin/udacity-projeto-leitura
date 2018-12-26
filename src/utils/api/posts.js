@@ -6,12 +6,15 @@ const _votePost = (post, vote, baseUrl, headers) => fetch(`${baseUrl}/posts/${po
     ...headers,
     'Content-Type': 'application/json',
   }),
+  method: 'POST',
 }).then(res => res.json());
 
 export default (baseUrl, headers) => ({
-  listPosts: () => fetch(`${baseUrl}/posts`, {
-    headers: new Headers(headers),
-  }).then(res => res.json()),
+  listPosts: async () => {
+    return await (await fetch(`${baseUrl}/posts`, {
+      headers: new Headers(headers),
+    })).json();
+  },
 
   createPost: (title, body, author, category) => fetch(`${baseUrl}/posts`, {
     method: 'POST',
