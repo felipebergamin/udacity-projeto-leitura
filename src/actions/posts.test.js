@@ -3,9 +3,13 @@ import { receivePosts,
   RECEIVE_POSTS,
   UPDATE_POST,
   REMOVE_POST,
+  UPVOTE_POST,
+  DOWNVOTE_POST,
   addPost,
   updatePost,
   removePost,
+  upvotePost,
+  downvotePost,
 } from './posts';
 
 describe('posts actions', () => {
@@ -51,5 +55,25 @@ describe('posts actions', () => {
     }
 
     expect(removePost(id)).toEqual(expectedAction)
+  })
+
+  it('should create an action to upvote a post', () => {
+    const id = 1;
+    const expectedAction = {
+      type: UPVOTE_POST,
+      id,
+    };
+
+    expect(upvotePost(id)).toEqual(expectedAction);
+  })
+
+  it('should create an action to downvote a post', () => {
+    const id = 1;
+    const expectedAction = {
+      type: DOWNVOTE_POST,
+      id,
+    };
+
+    expect(downvotePost(id)).toEqual(expectedAction);
   })
 })
