@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Box, Button, TextInput, Select, TextArea } from 'grommet';
 import { Redirect } from 'react-router-dom';
