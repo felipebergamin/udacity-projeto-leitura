@@ -1,31 +1,30 @@
-## Udacity Projeto Leitura
+# Readable (Udacity)
 
-Este é um projeto desenvolvido como parte do programa Nanodegree React da Udacity.
+Este é um projeto desenvolvido como requisito do *Nanodegree React* da **Udacity**. O usuário poderá fazer posts a respeito de determinados assuntos, comentar em seus posts ou em posts de outros usuários, e votar positivamente ou negativamente em posts e comentários. O usuário é capaz também de editar posts e comentários feitos.
 
-Trata-se de um aplicativo Web desenvolvido com React+Redux onde os usuários podem fazer posts e comentários.
+## Api Server
 
-### Para iniciar o projeto
-
-```
-git clone https://github.com/felipebergamin/udacity-projeto-leitura.git
-cd udacity-projeto-leitura
-yarn install
-yarn start
-```
-
-Ou usando npm:
+Instale e inicie o servidor da aplicação.
 
 ```
-git clone https://github.com/felipebergamin/udacity-projeto-leitura.git
-cd udacity-projeto-leitura
+cd api-server
 npm install
-npm start
+node server
 ```
 
-### Executando os testes
+## Web App
+
+Instale e inicie o web app React.
 
 ```shell
-yarn test
-# ou
-npm test
+cd readable
+yarn install # or npm install
+yarn start # or npm start
+```
+
+## Testes
+
+```shell
+cd readable
+yarn test # npm test
 ```
