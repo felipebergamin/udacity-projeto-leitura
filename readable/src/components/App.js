@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import Home from './Home';
@@ -18,11 +18,13 @@ class App extends Component {
     return (
       <Router>
         <Fragment>
-          <Route path='/' exact component={Home} />
-          <Route path='/post/new' exact component={NewPost} />
-          <Route path='/post/edit/:postid' exact component={EditPost} />
-          <Route path='/:category' exact component={Home} />
-          <Route path='/:category/:postid' exact component={PostView} />
+          <Switch>
+            <Route path='/' exact component={Home} />
+            <Route path='/post/new' exact component={NewPost} />
+            <Route path='/post/edit/:postid' exact component={EditPost} />
+            <Route path='/:category' exact component={Home} />
+            <Route path='/:category/:postid' exact component={PostView} />
+          </Switch>
         </Fragment>
       </Router>
     )
