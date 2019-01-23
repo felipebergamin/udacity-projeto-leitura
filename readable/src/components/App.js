@@ -10,10 +10,6 @@ import EditPost from './EditPost';
 
 class App extends Component {
 
-  componentDidMount() {
-    this.props.dispatch(handleInitialData());
-  }
-
   render() {
     return (
       <Router>
@@ -31,4 +27,8 @@ class App extends Component {
   }
 }
 
-export default connect()(App);
+function mapDispatchToProps(dispatch) {
+  return dispatch(handleInitialData());
+}
+
+export default connect(null, mapDispatchToProps)(App);
